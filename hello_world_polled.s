@@ -22,15 +22,15 @@ START:
 WRITE:
     lda DATA, x
     cmp #0
-    beq end
+    beq END
     jsr LCD_RDY
     sta 0x4001
     sta 0x4004
     inx
     jmp WRITE
 
-end:
-    jmp end
+END:
+    jmp END
 
 LCD_RDY:
     pha
