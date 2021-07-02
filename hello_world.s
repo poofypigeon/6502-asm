@@ -1,5 +1,5 @@
    org  $8000
-start:
+START:
     ; clear display
     lda #0b00000001
     sta 0x4000
@@ -25,10 +25,10 @@ WRITE:
     inx
     jmp WRITE
 
-end:
+END:
     jmp end
 
-data:
+DATA:
     string "Hello world!"
     byte 0
 
