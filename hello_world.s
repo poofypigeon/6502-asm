@@ -17,21 +17,21 @@ START:
 
     ldx #0
 WRITE:
-    lda data, x
+    lda DATA, x
     cmp #0
-    beq end
+    beq END
     sta 0x4001
     sta 0x4004
     inx
     jmp WRITE
 
 END:
-    jmp end
+    jmp END
 
 DATA:
     string "Hello world!"
     byte 0
 
     org $FFFC
-    word start
+    word START
     word $0000
